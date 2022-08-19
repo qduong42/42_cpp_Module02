@@ -10,16 +10,18 @@ Fixed::Fixed():_integer(0){
 }
 
 //Copy constructor: creates 
-Fixed::Fixed(const Fixed &obj):_integer(obj._integer){
+Fixed::Fixed(const Fixed &obj){
 	std::cout << "Copy constructor called" << std::endl;
+	this->_integer = obj.getRawBits(); /* I put this here because of the stupid output example: 
+	I think better practice is to initialize in initialisation list.? */
 	return ;
 }
 
 // assignment operator overload => changes function of = variable when used in association with this class.
 Fixed& Fixed::operator=(const Fixed &obj)
 {
-	this->_integer = obj._integer;
 	std::cout << "Copy assignment constructor called" << std::endl;
+	this->_integer = obj.getRawBits();
 	return (*this);
 }
 

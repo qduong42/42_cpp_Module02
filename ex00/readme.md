@@ -12,3 +12,15 @@ TODO:
 2. code overload for = operator
 3. ???
 4. profit(hopefully)
+
+Problems:
+- Order of prints are wrong... Also should we code setRawBits for ex00 if its not used anyway?
+
+Explorations:
+- Possible to print instance name? Possible solution below:
+
+#define SHOW(a) std::cout << #a << ": " << (a) << std::endl
+// ...
+int i = 2;
+SHOW (i);
+source: https://stackoverflow.com/questions/1795816/can-a-c-class-constructor-know-its-instance-name
