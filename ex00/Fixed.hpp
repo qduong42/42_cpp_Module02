@@ -8,8 +8,8 @@ class Fixed
 	public:
 
 		Fixed();
-		Fixed(const Fixed &obj);
-		Fixed& operator=(const Fixed &obj);
+		Fixed(Fixed const& obj);
+		Fixed& operator=(Fixed const& obj);
 		~Fixed();
 
 		int getRawBits(void)const; //returns raw value fixed-point value
@@ -27,5 +27,3 @@ class Fixed
 //fixed-point number: <8.3> 8 bits, 3 fractional. signed bits if negative -> 2's complement 
 
 //e.g 7.5 in 8 bit binary rep 0111 . 1000 -> 2 complement = 1000 . 1000
-
-

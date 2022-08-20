@@ -4,16 +4,23 @@
 
 // const int _nFracBits = 8;
 
-Fixed::Fixed():_integer(0){
+Fixed::Fixed():_integer(0)
+{
 	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
-//Copy constructor: creates 
-Fixed::Fixed(const Fixed &obj){
+/**
+ * @brief Construct a new Fixed:: Fixed object
+ * 
+ * @param obj obj reference to object instance given Fixed const& obj
+ */
+Fixed::Fixed(Fixed const& obj){
 	std::cout << "Copy constructor called" << std::endl;
-	this->_integer = obj.getRawBits(); /* I put this here because of the stupid output example: 
-	I think better practice is to initialize in initialisation list.? */
+	*this = obj; /* shallow vs deep copy? Instance = instance is which?
+	Better practice is to use initialisation list.? getter fkt in init list?
+	- this pointer cant be used in init list?
+	- this needs to be dereferenced to refer to instance itself and assigning that to ref obj.*/
 	return ;
 }
 
@@ -40,7 +47,7 @@ int Fixed::getRawBits(void)const
 
 void Fixed::setRawBits(int const raw)
 {
-	(void) raw;
+	this->_integer = raw;
 	std::cout << "Setter called" << std::endl;
 	return ;
 }
