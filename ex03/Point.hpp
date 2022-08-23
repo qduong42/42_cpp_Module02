@@ -9,13 +9,12 @@ class Point
 	public:
 
 		Point();
-		Point::Point(float const a, float const b);
+		Point(float const a, float const b);
 		Point(Point const& obj);
 		~Point();
-		Point& operator=(Point const& obj);
-		float get_x(void);
-		float get_y(void);
-		bool bsp( Point const a, Point const b, Point const c, Point const point);
+		Point const & operator=(Point const& obj);
+		float get_x(void)const;
+		float get_y(void)const;
 	private:
 
 		Fixed const _x;

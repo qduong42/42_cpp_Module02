@@ -17,9 +17,9 @@ Point::Point(Point const& obj):_x(obj._x), _y(obj._y)
 	return ;
 }
 
-Point& Point::operator=(Point const& obj)
+Point const& Point::operator=(Point const& obj)
 {
-	*this = obj;
+	(void) obj;
 	return (*this);
 }
 
@@ -28,14 +28,14 @@ Point::~Point()
 
 //	MEMBER FUNCTIONS
 
-float Point::get_x(void)
+float Point::get_x(void)const
 {
 	float a;
 	a = this->_x.toFloat();
 	return (a);
 }
 
-float Point::get_y(void)
+float Point::get_y(void)const
 {
 	float a;
 	a = this->_y.toFloat();
@@ -44,6 +44,6 @@ float Point::get_y(void)
 
 std::ostream & operator<<(std::ostream & o, Point const & input)
 {
-	o << "(" << input.getX() << "," << input.getY() << ")";
+	o << "(" << input.get_x() << "," << input.get_y() << ")";
 	return (o);
 }
