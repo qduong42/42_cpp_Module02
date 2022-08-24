@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
-#    Updated: 2022/08/23 15:48:21 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/24 15:18:59 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM := rm -rf
 
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS := main.cpp Fixed.cpp Point.cpp
+SRCS := main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS:= $(SRCS:%.cpp=%.o)
 

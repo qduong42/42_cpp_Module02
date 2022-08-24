@@ -6,40 +6,91 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 21:40:16 by qduong            #+#    #+#             */
-/*   Updated: 2022/08/23 17:09:32 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/24 15:36:56 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
-{
-	Fixed v2x (c.get_x() - a.get_x());
-	Fixed v2y (c.get_y() - a.get_y());
-	Fixed v1x (b.get_x() - a.get_x());
-	Fixed v1y (b.get_y() - a.get_y());
-	Fixed h = (((point.get_x() * v2y.toFloat() - point.get_x() * v2x.toFloat()) - (a.get_x() * v2y.toFloat() - a.get_y() * v2x.toFloat()))/ (v1x.toFloat() * v2y.toFloat() - v1y.toFloat() * v2x.toFloat()));
-	Fixed k = - (((point.get_x() * v1y.toFloat() - point.get_y() * v1x.toFloat()) - (a.get_x() * v1y.toFloat() - a.get_y() * v1x.toFloat())) / (v1x.toFloat() * v2y.toFloat() - v1y.toFloat() * v2x.toFloat()));
 
-	if (h > 0 && k > 0 && h + k < 1)
-	{
-		std::cout << "Point inside triangle!" << std::endl;
-		return true;
-	}
-	else
-	{
-		std::cout  << "Point outside triangle!" << std::endl;
-		return false;
-	}
-}
 
-int main()
+// bool bsp( Point const a, Point const b, Point const c, Point const point)
+// {
+//     Fixed dX(point.get_x()-c.get_x());
+//     Fixed dY(point.get_y()-c.get_y());
+//     Fixed dX21(c.get_x()-b.get_x());
+//     Fixed dY12( b.get_y()-c.get_y());
+//     Fixed D(dY12.toFloat()*(a.get_x()-c.get_x()) + dX21.toFloat()*(a.get_y()-c.get_y()));
+//     Fixed s(dY12.toFloat()*dX.toFloat() + dX21.toFloat()*dY.toFloat());
+//     Fixed t((c.get_y()-a.get_y())*dX.toFloat() + (a.get_x()-c.get_x())*dY.toFloat());
+//     if (D<0) return s<=0 && t<=0 && s+t>=D;
+//     return s>=0 && t>=0 && s+t<=D;
+// }
+// 	if (h > 0 && k > 0 && h + k < 1)
+// 	{
+// 		std::cout << "Point inside triangle!" << std::endl;
+// 		return true;
+// 	}
+// 	else
+// 	{
+// 		std::cout  << "Point outside triangle!" << std::endl;
+// 		return false;
+// 	}
+// }
+
+// int main()
+// {
+// 	Point to_find(0.5f, 0.5f);
+// 	Point a(0, 0);
+// 	Point b(0, 2);
+// 	Point c(2, 0);
+// 	bool d = bsp(a, b, c, to_find);
+// 	std::cout << d << std::endl;
+// }
+
+// int main()
+// {
+// 	Point to_find(0.9f, 0.9f);
+// 	Point a(0, 0);
+// 	Point b(2, 0);
+// 	Point c(0, 2);
+// 	bool d = bsp(a, b, c, to_find);
+// 	std::cout << d << std::endl;
+// }
+
+int	main(void)
 {
-	Point to_find(5, 5.05);
-	Point a(0, 1);
-	Point b(5, 1);
-	Point c(5, 5);
-	bool d = bsp(a, b, c, to_find);
-	std::cout << d << std::endl;
+	Point	a(0, 0);
+	Point	b(10, 0);
+	Point	c(0, 10);
+	Point	p1(0, 0);
+	Point	p2(10, 0);
+	Point	p3(0, 10);
+	Point	p4(3, 3);
+	Point	p5(5.5f, 5.5f);
+	Point	p6(5, 5);
+
+	std::cout << "point a = " << a << std::endl;
+	std::cout << "point b = " << b << std::endl;
+	std::cout << "point c = " << c << std::endl;
+	std::cout << "point p1 = " << p1 << std::endl;
+	std::cout << "point p1 = " ;
+	bsp(a,b,c,p1);
+	std::cout << "point p2 = " << p2 << std::endl;
+	std::cout << "point p2 = " ;
+	bsp(a,b,c,p2);
+	std::cout << "point p3 = " << p3 << std::endl;
+	std::cout << "point p3 = " ;
+	bsp(a,b,c,p3);
+	std::cout << "point p4 = " << p4 << std::endl;
+	std::cout << "point p4 = " ;
+	bsp(a,b,c,p4);
+	std::cout << "point p5 = " << p5 << std::endl;
+	std::cout << "point p5 = " ;
+	bsp(a,b,c,p5);
+	std::cout << "point p6 = " << p6 << std::endl;
+	std::cout << "point p6 = " ;
+	bsp(a,b,c,p6);
+	return (0);
 }
