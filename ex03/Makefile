@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 00:41:55 by qduong            #+#    #+#              #
-#    Updated: 2022/08/24 15:18:59 by qduong           ###   ########.fr        #
+#    Updated: 2022/08/24 16:17:19 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ all:$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@echo ${Q}${NL}${GREEN} "Compilation Done" ${NC}${Q}
+	@echo ${Q}${NL}${GREEN} "Compilation Done" ${NC}${NL}${Q}
 	./$(NAME)
 
 $(OBJS) : %.o: %.cpp
