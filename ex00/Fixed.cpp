@@ -48,6 +48,6 @@ int Fixed::getRawBits(void)const
 void Fixed::setRawBits(int const raw)
 {
 	this->_integer = raw;
-	std::cout << "Setter called" << std::endl;
+	// std::cout << "Setter called" << std::endl;
 	return ;
 }
