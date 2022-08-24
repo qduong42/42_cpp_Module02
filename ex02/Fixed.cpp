@@ -20,6 +20,7 @@ Fixed::Fixed(int const i_number)
 	this->_integer = i_number * (1 << _nFracBits);
 	return ;
 }
+
 /**
  * custom constructor converting float to fixed point value to store in int container.
  * 
@@ -38,10 +39,7 @@ Fixed::Fixed(float const f_number)
  */
 Fixed::Fixed(Fixed const& obj){
 	std::cout << "Copy constructor called" << std::endl;
-	*this = obj; /* shallow vs deep copy? Instance = instance is which?
-	Better practice is to use initialisation list.? getter fkt in init list?
-	- this pointer cant be used in init list?
-	- this needs to be dereferenced to refer to instance itself and assigning that to ref obj.*/
+	*this = obj;
 	return ;
 }
 
@@ -72,7 +70,7 @@ int Fixed::toInt(void)const
 	return i;
 }
 
-//need to typecast int into float, so that its stored as float. One typecast is enough..?
+//need to typecast int into float, so that its stored as float. One typecast is enough..why?
 float Fixed::toFloat(void)const
 {
 	float f;
@@ -227,28 +225,3 @@ std::ostream& operator <<(std::ostream& o, Fixed const& fp)
 	o << fp.toFloat();
 	return o;
 }
-
-// Is there a way to introduce error handling for same values without using pointer?
-// Fixed* Fixed::min(Fixed& obj1, Fixed& obj2)
-// {
-// 	if (obj1.getRawBits() < obj2.getRawBits())
-// 		return (&obj1);
-// 	else if (obj1.getRawBits() == obj2.getRawBits())
-// 	{
-// 		std::cout << "Both are the same value!" << std::endl;
-// 		return (NULL);
-// 	}
-// 	else
-// 		return (&obj2);
-// }
-
-// std::ostream& operator <<(std::ostream& o, Fixed* fp)
-// {
-// 	if (fp == NULL)
-// 	{
-// 		o << "Both are same value!" << std::endl;
-// 	}
-// 	else
-// 		o << fp->toFloat();
-// 	return o;
-// }

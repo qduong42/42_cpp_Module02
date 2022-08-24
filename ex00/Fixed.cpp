@@ -15,12 +15,10 @@ Fixed::Fixed():_integer(0)
  * 
  * @param obj obj reference to object instance given Fixed const& obj
  */
-Fixed::Fixed(Fixed const& obj){
+Fixed::Fixed(Fixed const& obj)
+{
 	std::cout << "Copy constructor called" << std::endl;
-	*this = obj; /* shallow vs deep copy? Instance = instance is which?
-	Better practice is to use initialisation list.? getter fkt in init list?
-	- this pointer cant be used in init list?
-	- this needs to be dereferenced to refer to instance itself and assigning that to ref obj.*/
+	*this = obj;
 	return ;
 }
 

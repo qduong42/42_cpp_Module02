@@ -48,8 +48,7 @@ class Fixed
 	private:
 
 		int _integer;
-		static const int _nFracBits= 8; /* can I assigned it here or better in constructor? (Prob cant be in constr 
-		because its //static data member (non member attribute according to video which is wrong?)) */
+		static const int _nFracBits= 8;
 };
 
 std::ostream& operator<<(std::ostream& o, Fixed const& fp);
