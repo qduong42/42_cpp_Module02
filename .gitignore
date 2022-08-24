@@ -1,0 +1,8 @@
+*.dSYM
+*.o
+*.png
+.vscode/
+*.pdf
+one_small_step
+test
+a.out

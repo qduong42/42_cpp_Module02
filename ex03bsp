@@ -1,0 +1,20 @@
+h = det(pointv2) - det(av2) / (det (v1v2))
+
+k = - (det(pointv1) - det (av1)) / (det(v1v2))
+
+v is given point 
+
+uv = u x v = uxvy - uyvx
+
+det pointv2 = point x * v2y - point y * v2x 
+det av2 = ax * v2y - ay * v2x
+det v1v2 = v1x * v2y - v1y * v2x
+
+det pointv1 = point x * v1y - point y * v1x
+det av1 = ax * v1y - ay * v1x
+det v1v2 = v1x * v2y - v1y * v2x
+
+h = ((point x * v2y - point y * v2x ) - (ax * v2y - ay * v2x) ) / (v1x * v2y - v1y * v2x)
+k = - ((point x * v1y - point y * v1x) - (ax * v1y - ay * v1x)) / (v1x * v2y - v1y * v2x)
+
+k = ((-point x * v1y + point y * v1x) + (-ax * v1y + ay * v1x)) / (-v1x * v2y + v1y * v2x)
