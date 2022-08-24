@@ -5,7 +5,7 @@
 
 Fixed::Fixed():_integer(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
@@ -16,7 +16,7 @@ Fixed::Fixed():_integer(0)
  */
 Fixed::Fixed(int const i_number)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->_integer = i_number * (1 << _nFracBits);
 	return ;
 }
@@ -28,7 +28,7 @@ Fixed::Fixed(int const i_number)
  */
 Fixed::Fixed(float const f_number)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->_integer = roundf(f_number * (1 << _nFracBits));
 }
 
@@ -38,28 +38,28 @@ Fixed::Fixed(float const f_number)
  * @param obj obj reference to object instance given Fixed const& obj
  */
 Fixed::Fixed(Fixed const& obj){
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 	return ;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 //	MEMBER FUNCTIONS
 
 int Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_integer);
 }
 
 void Fixed::setRawBits(int const raw)
 {
 	this->_integer = raw;
-	std::cout << "Setter called" << std::endl;
+	// std::cout << "Setter called" << std::endl;
 	return ;
 }
 
@@ -81,7 +81,7 @@ float Fixed::toFloat(void)const
 // assignment operator overload => changes function of = variable when used in association with this class.
 Fixed& Fixed::operator=(const Fixed &obj)
 {
-	std::cout << "Copy assignment constructor called" << std::endl;
+	// std::cout << "Copy assignment constructor called" << std::endl;
 	//this->_integer = obj.getRawBits();
 	if (this != &obj)
 		this->setRawBits(obj.getRawBits());
